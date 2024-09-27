@@ -1,0 +1,20 @@
+{
+  "name": "think-in-a-redux-way-assignment-5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.7",
+    "immer": "^9.0.14",
+    "node-fetch": "^2.7.0",
+    "redux": "^5.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.1"
+  }
+}
