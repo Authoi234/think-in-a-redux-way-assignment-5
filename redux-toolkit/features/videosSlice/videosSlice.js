@@ -4,7 +4,7 @@ const fetch = require("node-fetch");
 // inital State
 const initialState = {
     loading: false,
-    videos: [],
+    video: {},
     error: ""
 };
 
@@ -12,7 +12,6 @@ const initialState = {
 const fetchVideo = createAsyncThunk("videos/fetchVideo", async () => {
     const response = await fetch("http://localhost:9000/videos");
     const video = await response.json();
-    console.log(video);
     return video;
 })
 
@@ -22,17 +21,17 @@ const videosSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(fetchVideo.pending, (state, action) => {
             state.loading = true;
-            state.videos = [];
+            state.video = {};
             state.error = ""
         });
         builder.addCase(fetchVideo.fulfilled, (state, action) => {
             state.loading = false;
-            state.videos = action.payload;
-            state.error = ""
+            state.video = action.payload;
+            state.error = "";
         });
         builder.addCase(fetchVideo.rejected, (state, action) => {
             state.loading = false;
-            state.videos = [];
+            state.video = {};
             state.error = action.payload
         });
     },
